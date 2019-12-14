@@ -2,12 +2,18 @@ pipeline {
     agent any
     stages {
 		
-		// *****ALL CODE TO BE ADDED BELOW THIS COMMENT*****
-				
-		//
+			//Code starts for stage Clean
+        stage('Clean') {
+            steps {
+                sh 'mvn clean'
+            }
+        }
 		
-		
-		
+	stage('PMD') {
+            steps {
+                sh 'mvn site'
+            }
+        }	
 		// *****ALL CODE TO BE ADDED ABOVE THIS COMMENT*****
     }
 }
